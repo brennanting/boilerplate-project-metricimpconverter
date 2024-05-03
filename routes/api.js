@@ -17,8 +17,13 @@ module.exports = function (app) {
       return res.send("Invalid unit");
     }
     let returnUnit = convertHandler.getReturnUnit(initUnit);
-    let returnNum = convertHandler.convert(initNum, initUnit)
-    let string = convertHandler.getString(initNum, initUnit, returnNum, returnUnit)
+    let returnNum = convertHandler.convert(initNum, initUnit);
+    let string = convertHandler.getString(
+      initNum,
+      initUnit,
+      returnNum,
+      returnUnit,
+    );
     res.send({ initNum, initUnit, returnNum, returnUnit, string });
   });
 };
